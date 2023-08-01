@@ -35,6 +35,7 @@ function onFormSubmit(evt) {
 const checkedData = localStorage.getItem(STORAGE_KEY);
 if (checkedData) {
   const data = JSON.parse(checkedData);
-§    formRef.elements[key].value = data[key];
+  for (let key in data) {
+    formRef.elements[key].value = data[key];
   }
 }
